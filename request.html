@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Track</title>
+
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <!-- Main site style -->
+  <link rel="stylesheet" href="css/app.css" />
+  <!-- Style for modal pop-up -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.css" />
+  <!-- AOS animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Flickity carousel styles -->
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
+</head>
+
+<!-- Added page-specific class so styles/scripts only affect this page -->
+<body class="request-page"> 
+  <!-- Navigation bar -->
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="room.html">Stations</a>
+    <a href="request.html">Request a Track</a>
+  </nav>
+
+  <main class="form-section">
+    <!-- Page title with fade-in animation -->
+    <h1 data-aos="fade">Request LoFi Tracks</h1>
+
+    <!-- Small horizontal carousel previewing music categories -->
+    <section class="mini-carousel-wrap">
+      <div class="mini-carousel">
+        <div class="mini-cell" style="background-image:url('assets/images/study.png')" aria-label="Study Beats"></div>
+        <div class="mini-cell" style="background-image:url('assets/images/hiphop.png')" aria-label="Chillhop"></div>
+        <div class="mini-cell" style="background-image:url('assets/images/jazz.png')" aria-label="Jazzhop"></div>
+        <div class="mini-cell" style="background-image:url('assets/images/nightlist.png')" aria-label="Night Vibes"></div>
+      </div>
+    </section>
+
+    <!-- Track request form -->
+    <form id="requestForm">
+      <!-- Name input -->
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Email input -->
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <!-- Mood dropdown -->
+      <label for="mood">Mood</label>
+      <select id="mood" name="mood" required>
+        <option value="">Select a mood</option>
+        <option value="focus">Focus</option>
+        <option value="chill">Chill</option>
+        <option value="rainy">Rainy Day</option>
+        <option value="sleep">Sleepy</option>
+      </select>
+
+      <!-- Message box -->
+      <label for="message">Request Details</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <!-- Submit button w/ delayed fade-in -->
+      <button type="submit" class="btn" data-aos="fade" data-aos-delay="2000">Send Request</button>
+    </form>
+
+    <!-- Modal that appears after successful submission -->
+    <div id="thankyou-modal" class="modal">
+      <h2>Thanks for your request!</h2>
+      <p>We’ll review your track suggestion and add it to the queue.</p>
+      <a href="#" rel="modal:close" class="btn" style="margin-top:1rem;">Close</a>
+    </div> 
+  </main>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- Form validation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <!-- Modal pop-up -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+  <!-- AOS animations -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Flickity carousel script -->
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+  <!-- Custom JS for form handling -->
+  <script src="js/validate.js"></script>
+  <script src="js/thank-you.js"></script>
+  <!-- AOS initialization -->
+  <script src="js/aos-init.js"></script>
+  <!-- Custom JS for flickity carousel -->
+  <script src="js/carousel.js"></script>
+</body>
+</html>

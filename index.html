@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoFi Café</title>
+
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <!-- Main custom stylesheet -->
+  <link rel="stylesheet" href="css/app.css" />
+  <!-- CSS for background video plugin -->
+  <link rel="stylesheet" href="css/plugins/jquery.background-video.css" />
+  <!-- CSS for AOS animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- jQuery (needed for background video plugin and other scripts) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- Site navigation with links to main pages -->
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="room.html">Stations</a>
+    <a href="request.html">Request a Track</a>
+  </nav>
+
+  <!-- Hero section with looping background video -->
+  <section class="hero">
+    <div class="video-wrapper">
+      <!-- Background video, muted & autoplayed, with a poster image fallback -->
+      <video class="bg-video" autoplay muted loop playsinline poster="assets/images/lofi-poster.jpg">
+        <source src="assets/video/lofi.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Dark overlay to make text more readable -->
+    <div class="overlay">
+      <div class="content">
+        <!-- Heading fades in from bottom -->
+        <h1 data-aos="fade-up">Welcome to the LoFi Café</h1>
+        <!-- Subtitle fades in slightly after heading -->
+        <p data-aos="fade-up" data-aos-delay="100">Chill, study, and vibe with curated beats.</p>
+        <!-- Button fades in last -->
+        <a href="room.html" class="btn" data-aos="fade-up" data-aos-delay="1500">Start Listening</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- JS for background video plugin -->
+  <script src="js/plugins/jquery.background-video.js"></script>
+  <!-- JS for AOS animations -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- AOS initialization -->
+  <script src="js/aos-init.js"></script>
+  <!-- Homepage-specific JavaScript -->
+  <script src="js/bg-video.js"></script>
+</body>
+</html>

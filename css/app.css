@@ -1,0 +1,392 @@
+/* Base reset & font */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'LofiLifestyle', sans-serif;
+  color: #6c4e39;
+  background-color: #ede5dc;
+}
+
+/* Load custom font from assets */
+@font-face {
+  font-family: 'LofiLifestyle';
+  src: url('../assets/fonts/LofiLifestyle.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General page sections */
+.hero, .station-carousel {
+  padding: 2rem; /* space around content */
+}
+
+.hero {
+  position: relative; /* needed for video overlay positioning */
+  height: 100vh; /* full screen height */
+  width: 100%;
+  overflow: hidden; /* hide anything outside the hero */
+}
+
+/* Video container inside hero */
+.video-wrapper {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Background video styling */
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fill space without stretching */
+  display: block;
+}
+
+/* Text box overlaying the video */
+.overlay {
+  position: absolute;
+  top: 5rem; left: 5rem;
+  background: #d9bc9ee6; 
+  padding: 1rem 2rem 3rem 2rem;
+  border-radius: 12px;
+  text-align: left;
+  width: 100%;
+  max-width: 320px; /* limit box size */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* above video */
+}
+
+/* Heading styles inside hero/content areas */
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.header h1,
+.form-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Form section heading */
+.form-section h1 {
+  text-align: left;
+  margin-top: 1.7rem;
+  margin-left: 3rem;
+}
+
+/* Labels in forms */
+.form-section label {
+  margin-bottom: 0.3rem;
+  margin-top: 0.8rem;
+}
+
+/* Dropdown styling */
+.form-section select {
+  font-family: 'LofiLifestyle', sans-serif;
+  font-size: 1.2rem;
+  color: #6c4e39;
+  border: 2px solid #d9bc9e;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 0.75rem;
+}
+
+/* Buttons in form section */
+.form-section .btn {
+  opacity: 1 !important; /* override animations hiding it */
+  padding: 0.8rem 2rem;
+  font-family: 'LofiLifestyle', sans-serif;
+  font-size: 1.4rem;
+  width: 50%;
+  max-width: 300px;
+  margin: 2rem auto;
+  border: none;
+}
+
+/* Paragraphs inside content areas */
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 2.8rem;
+}
+
+/* Generic button styling */
+.btn {
+  background: #5c7a92;
+  color: #d9bc9e;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #3b5870;
+  color:#d9bc9e;
+}
+
+/* General form layout */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs, dropdowns, text areas */
+input, select, textarea {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+/* Navigation bar */
+.site-nav {
+  background: #d9bc9e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: sticky;
+  top: 0; /* sticks to top when scrolling */
+  z-index: 999;
+}
+.site-nav a {
+  color: #6c4e39;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+.site-nav a:hover {
+  color: #37281c;
+}
+
+/* Custom room page style */
+.room-page .station-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+/* Station layout with play button + image */
+.room-page .station {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Small play button icon */
+.room-page .play-btn {
+  width: 50px; height: 50px;
+  background: url('../assets/icons/play-icon.svg') no-repeat center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Thumbnail background for stations */
+.room-page .station-thumbnail {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Station title + description */
+.room-page .station-caption {
+  color: #000;
+  background: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+.room-page .station-caption h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.room-page .station-caption p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+/* Play image hover scale effect */
+.room-page .play-image {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.room-page .play-image:hover {
+  transform: scale(1.1);
+}
+
+/* Larger thumbnail version */
+.room-page .station-thumbnail {
+  flex-grow: 1;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Caption with dark overlay for contrast */
+.room-page .station-caption {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 1rem;
+  width: 100%;
+}
+.room-page .station-caption h2 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+.room-page .station-caption p {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+/* Room page-specific button styles */
+.room-page .btn {
+  background: #5c7a92;
+  color: #d9bc9e;
+  padding: 0.6rem 1.4rem;
+  font-weight: 900;
+  font-size: 1rem;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.room-page .btn:hover {
+  background: #3b5870;
+  color:#d9bc9e;
+}
+
+/* Header layout for room page */
+.room-page .header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 3rem;
+  gap: 0.5rem;
+}
+
+/* Input font styling */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #6c4e39;
+}
+
+/* Form section wrapper */
+.form-section {
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Request page styles */
+.request-page .mini-carousel-wrap {
+  max-width: 900px;
+  margin: 1rem auto 2.5rem;
+  padding: 0 2rem;
+  position: relative;
+}
+.request-page .mini-carousel { background: transparent; }
+.request-page .mini-cell {
+  width: 280px;
+  height: 140px;
+  margin-right: 14px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.20);
+}
+
+/* Flickity arrow button overrides */
+.request-page .flickity-button-icon { display: none; }
+.request-page .flickity-prev-next-button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  width: 36px; height: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.request-page .flickity-prev-next-button:hover {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.request-page .flickity-prev-next-button.previous {
+  background-image: url("../assets/images/left.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  left: -50px;
+}
+.request-page .flickity-prev-next-button.next {
+  background-image: url("../assets/images/right.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  right: -50px;
+}
+
+/* Modal styles */
+.modal {
+  background: #ede5dc;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 400px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  text-align: center;
+  font-family: 'LofiLifestyle', sans-serif;
+  color: #6c4e39;
+}
+.modal a.btn {
+  display: inline-block;
+  background: #5c7a92;
+  color: #d9bc9e;
+  border-radius: 30px;
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  transition: 0.3s;
+  margin-top: 1rem;
+}
+.modal a.btn:hover {
+  background: #3b5870;
+  color: #d9bc9e;
+}
+.blocker {
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000 !important;
+}
+.modal a.close-modal {
+  display: none !important;
+}

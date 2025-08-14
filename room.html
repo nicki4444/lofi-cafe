@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoFi Stations</title>
+
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <!-- Main site style -->
+  <link rel="stylesheet" href="css/app.css" />
+  <!-- AOS animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<!-- Page-specific class for custom styles -->
+<body class="room-page">
+
+  <!-- Nav menu -->
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="room.html">Stations</a>
+    <a href="request.html">Request a Track</a>
+  </nav>
+
+  <!-- Page header section -->
+  <header class="header">
+    <!-- Title with fade-in animation -->
+    <h1 data-aos="fade">What's Your Vibe Today?</h1>
+    <!-- Back to home button with delayed fade-in -->
+    <a href="index.html" class="btn" data-aos="fade" data-aos-delay="1200">Back to Home</a>
+  </header>
+
+  <!-- Main section containing station options -->
+  <main class="station-carousel">
+
+    <!-- Station 1: Study Beats -->
+    <div class="station">
+      <!-- Play button linking directly to corresponding YouTube vid -->
+      <a href="https://www.youtube.com/watch?v=lTRiuFIWV54" target="_blank" aria-label="Play Study Beats on YouTube">
+        <img src="assets/images/playbtn.png" alt="Play" class="play-image" />
+      </a>
+      <!-- Thumbnail bg image -->
+      <div class="station-thumbnail" style="background-image:url('assets/images/study.png')">
+        <!-- Station title and description -->
+        <div class="station-caption">
+          <h2>Study Beats</h2>
+          <p>Focus and flow with instrumental LoFi.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Station 2: Chillhop -->
+    <div class="station">
+      <a href="https://www.youtube.com/watch?v=CLeZyIID9Bo" target="_blank" aria-label="Play Chillhop on YouTube">
+        <img src="assets/images/playbtn.png" alt="Play" class="play-image" />
+      </a>
+      <div class="station-thumbnail" style="background-image:url('assets/images/hiphop.png')">
+        <div class="station-caption">
+          <h2>Chillhop</h2>
+          <p>Relaxed rhythms to unwind and vibe.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Station 3: Jazzhop -->
+    <div class="station">
+      <a href="https://www.youtube.com/watch?v=qzyl0f3mRG0" target="_blank" aria-label="Play Jazzhop on YouTube">
+        <img src="assets/images/playbtn.png" alt="Play" class="play-image" />
+      </a>
+      <div class="station-thumbnail" style="background-image:url('assets/images/jazz.png')">
+        <div class="station-caption">
+          <h2>Jazzhop</h2>
+          <p>Groovy jazzy beats with chill textures.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Station 4: Night Vibes -->
+    <div class="station">
+      <a href="https://www.youtube.com/watch?v=IvNDR1wJJKQ" target="_blank" aria-label="Play Night Vibes on YouTube">
+        <img src="assets/images/playbtn.png" alt="Play" class="play-image" />
+      </a>
+      <div class="station-thumbnail" style="background-image:url('assets/images/nightlist.png')">
+        <div class="station-caption">
+          <h2>Night Vibes</h2>
+          <p>Smooth and moody tracks perfect for winding down.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- jQuery for DOM manipulation -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- AOS animation script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Initialize AOS animations -->
+  <script src="js/aos-init.js"></script>
+</body>
+</html>
